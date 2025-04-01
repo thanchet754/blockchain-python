@@ -1,12 +1,12 @@
 # python_blockchain_app
 
-A simple tutorial for developing a blockchain application from scratch in Python.
+Hướng dẫn đơn giản để phát triển ứng dụng blockchain từ đầu bằng Python.
 
-## What is blockchain? How it is implemented? And how it works?
+## Blockchain là gì? Nó được triển khai như thế nào? Và nó hoạt động như thế nào?
 
-Please read the [step-by-step implementation tutorial](https://www.ibm.com/developerworks/cloud/library/cl-develop-blockchain-app-in-python/index.html) to get your answers :)
+Vui lòng đọc [hướng dẫn triển khai từng bước](https://www.ibm.com/developerworks/cloud/library/cl-develop-blockchain-app-in-python/index.html) để biết câu trả lời của bạn :)
 
-## Instructions to run
+## Hướng dẫn chạy
 
 Clone the project,
 
