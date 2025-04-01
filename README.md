@@ -29,34 +29,34 @@ $ export FLASK_APP=node_server.py
 $ flask run --port 8000
 ```
 
-One instance of our blockchain node is now up and running at port 8000.
+Một phiên bản nút blockchain của tôi hiện đang hoạt động tại cổng 8000.
 
 
-Run the application on a different terminal session,
+Chạy ứng dụng trên một phiên bản thiết bị đầu cuối khác,
 
 ```sh
 $ python run_app.py
 ```
 
-The application should be up and running at [http://localhost:5000](http://localhost:5000).
+Ứng dụng phải được thiết lập và chạy tại [http://localhost:5000](http://localhost:5000).
 
-Here are a few screenshots
+Dưới đây là một vài ảnh chụp màn hình
 
-1. Posting some content
+1. Đăng một số nội dung
 
 ![image.png](https://github.com/satwikkansal/python_blockchain_app/raw/master/screenshots/1.png)
 
-2. Requesting the node to mine
+2. Yêu cầu nút khai thác
 
 ![image.png](https://github.com/satwikkansal/python_blockchain_app/raw/master/screenshots/2.png)
 
-3. Resyncing with the chain for updated data
+3. Đồng bộ hóa với chuỗi để cập nhật dữ liệu
 
 ![image.png](https://github.com/satwikkansal/python_blockchain_app/raw/master/screenshots/3.png)
 
-To play around by spinning off multiple custom nodes, use the `register_with/` endpoint to register a new node. 
+Để thử nghiệm bằng cách tạo ra nhiều nút tùy chỉnh, hãy sử dụng điểm cuối `register_with/` để đăng ký một nút mới.
 
-Here's a sample scenario that you might wanna try,
+Đây là một kịch bản mẫu mà bạn có thể muốn thử,
 
 ```sh
 # already running
@@ -66,7 +66,7 @@ $ flask run --port 8001 &
 $ flask run --port 8002 &
 ```
 
-You can use the following cURL requests to register the nodes at port `8001` and `8002` with the already running `8000`.
+Bạn có thể sử dụng các yêu cầu cURL sau để đăng ký các nút ở cổng `8001` và `8002` với `8000` đang chạy.
 
 ```sh
 curl -X POST \
@@ -82,11 +82,11 @@ curl -X POST \
   -d '{"node_address": "http://127.0.0.1:8000"}'
 ```
 
-This will make the node at port 8000 aware of the nodes at port 8001 and 8002, and make the newer nodes sync the chain with the node 8000, so that they are able to actively participate in the mining process post registration.
+Điều này sẽ giúp nút ở cổng 8000 nhận biết được các nút ở cổng 8001 và 8002, đồng thời giúp các nút mới hơn đồng bộ chuỗi với nút 8000 để chúng có thể chủ động tham gia vào quá trình khai thác sau khi đăng ký.
 
-To update the node with which the frontend application syncs (default is localhost port 8000), change `CONNECTED_NODE_ADDRESS` field in the [views.py](/app/views.py) file.
+Để cập nhật nút mà ứng dụng giao diện người dùng đồng bộ hóa (mặc định là cổng localhost 8000), hãy thay đổi trường `CONNECTED_NODE_ADDRESS` trong tệp [views.py](/app/views.py).
 
-Once you do all this, you can run the application, create transactions (post messages via the web inteface), and once you mine the transactions, all the nodes in the network will update the chain. The chain of the nodes can also be inspected by inovking `/chain` endpoint using cURL.
+Sau khi thực hiện tất cả những điều này, bạn có thể chạy ứng dụng, tạo giao dịch (đăng tin nhắn qua giao diện web) và sau khi khai thác giao dịch, tất cả các nút trong mạng sẽ cập nhật chuỗi. Chuỗi các nút cũng có thể được kiểm tra bằng cách khởi tạo điểm cuối `/chain` bằng cURL.
 
 ```sh
 $ curl -X GET http://localhost:8001/chain
