@@ -42,7 +42,7 @@ $ python run_app.py
 
 Dưới đây là một vài ảnh chụp màn hình
 
-1. Đăng một số nội dung
+1. Một số nội dung
 
 ![image.png](https://github.com/satwikkansal/python_blockchain_app/raw/master/screenshots/1.png)
 
